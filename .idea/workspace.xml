@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="" />
+    <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/controller/UserAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/service/UserAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/util/StringUtil.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,15 +37,24 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BearedApiGatewayApplication.executor": "Run",
+    "Application.BearedUserServiceApplication.executor": "Run",
     "Application.EurekaServerApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/MyWorkSpace_Beared/mr-beared-system/EurekaServer/src/main/resources",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "F1__UserService__Implementation",
+    "last_opened_file_path": "C:/MyWorkSpace_Beared/mr-beared-system/BearedUserService/src/main/resources",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyWorkSpace_Beared\mr-beared-system\BearedUserService\src\main\resources" />
+      <recent name="C:\MyWorkSpace_Beared\mr-beared-system\EurekaServer\src\main\resources" />
+      <recent name="C:\MyWorkSpace_Beared\mr-beared-system\BearedApiGateway\src\main\resources" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="" />
