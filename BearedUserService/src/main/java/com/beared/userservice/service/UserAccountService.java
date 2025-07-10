@@ -2,6 +2,7 @@ package com.beared.userservice.service;
 
 import com.beared.userservice.model.UserAccount;
 import com.beared.userservice.repository.UserAccountRepository;
+import com.beared.userservice.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,15 +28,15 @@ public class UserAccountService {
     public UserAccount login(String email, String password) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
         if (userOpt.isEmpty()) {
-            throw new IllegalArgumentException("User with this email does not exist.");
+            throw new IllegalArgumentException(StringUtil.EMAIL_NOT_FOUND);
         }
         UserAccount user = userOpt.get();
         if(user.getIsActive()=='N')
         {
-            throw new IllegalArgumentException("Account Not Activated");
+            throw new IllegalArgumentException(StringUtil.ACCOUNT_NOT_ACTIVATED);
         }
         else if (!passwordEncoder.matches(password, user.getPasswordHash())) {
-            throw new IllegalArgumentException("Invalid credentials.");
+            throw new IllegalArgumentException(StringUtil.INVALID_CREDENTIALS);
         }
         return user;
     }
@@ -43,7 +44,7 @@ public class UserAccountService {
     public UserAccount requestAuthCode(String email) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
         if (userOpt.isEmpty()) {
-            throw new IllegalArgumentException("User with this email does not exist.");
+            throw new IllegalArgumentException(StringUtil.EMAIL_NOT_FOUND);
         }
         UserAccount user = userOpt.get();
         String authCode = generateAuthCode();
@@ -58,14 +59,14 @@ public class UserAccountService {
     public boolean verifyAuthCode(String email, String code) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
         if (userOpt.isEmpty()) {
-            throw new IllegalArgumentException("User not found.");
+            throw new IllegalArgumentException(StringUtil.EMAIL_NOT_FOUND);
         }
         UserAccount user = userOpt.get();
         if (!code.equals(user.getAuthCode())) {
-            throw new IllegalArgumentException("Invalid auth code.");
+            throw new IllegalArgumentException(StringUtil.INVALID_AUTHENTICATION_CODE);
         }
         if (LocalDateTime.now().isAfter(user.getResetTokenExpiry())) {
-            throw new IllegalArgumentException("Auth code expired.");
+            throw new IllegalArgumentException(StringUtil.EXPIRATION_AUTHENTICATION_CODE);
         }
         user.setAuthCode(null);
         user.setResetTokenExpiry(null);
@@ -78,14 +79,14 @@ public class UserAccountService {
     public boolean resetPassword(String email, String authCode, String newPassword) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
         if (userOpt.isEmpty()) {
-            throw new IllegalArgumentException("User not found.");
+            throw new IllegalArgumentException(StringUtil.EMAIL_NOT_FOUND);
         }
         UserAccount user = userOpt.get();
         if (!authCode.equals(user.getAuthCode())) {
-            throw new IllegalArgumentException("Invalid auth code.");
+            throw new IllegalArgumentException(StringUtil.INVALID_AUTHENTICATION_CODE);
         }
         if (LocalDateTime.now().isAfter(user.getResetTokenExpiry())) {
-            throw new IllegalArgumentException("Auth code expired.");
+            throw new IllegalArgumentException(StringUtil.EXPIRATION_AUTHENTICATION_CODE);
         }
         user.setPasswordHash(passwordEncoder.encode(newPassword));
         user.setAuthCode(null);
@@ -98,11 +99,11 @@ public class UserAccountService {
     public boolean deleteAccount(String email, String password) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
         if (userOpt.isEmpty()) {
-            throw new IllegalArgumentException("User not found.");
+            throw new IllegalArgumentException(StringUtil.EMAIL_NOT_FOUND);
         }
         UserAccount user = userOpt.get();
         if (!passwordEncoder.matches(password, user.getPasswordHash())) {
-            throw new IllegalArgumentException("Invalid credentials.");
+            throw new IllegalArgumentException(StringUtil.INVALID_CREDENTIALS);
         }
         repository.delete(user);
         return true;
