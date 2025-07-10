@@ -95,6 +95,19 @@ public class UserAccountService {
         return true;
     }
 
+    public boolean deleteAccount(String email, String password) {
+        Optional<UserAccount> userOpt = repository.findByEmail(email);
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("User not found.");
+        }
+        UserAccount user = userOpt.get();
+        if (!passwordEncoder.matches(password, user.getPasswordHash())) {
+            throw new IllegalArgumentException("Invalid credentials.");
+        }
+        repository.delete(user);
+        return true;
+    }
+
     private String generateAuthCode() {
         Random random = new Random();
         int code = 1000 + random.nextInt(9000);
