@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/service/UserAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedApiGateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BearedApiGateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "F1__UserService__Implementation",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/MyWorkSpace_Beared/mr-beared-system/BearedUserService/src/main/resources",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
