@@ -1,0 +1,5 @@
+===========================================
+          B E A R E D ®   U S E R
+                S E R V I C E
+===========================================
+${AnsiColor.BRIGHT_BLUE}:: Mr. Beared® 🤓  :: Running Spring Boot ${spring-boot.version} ::

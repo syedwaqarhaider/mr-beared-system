@@ -7,6 +7,16 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="dev-azure-com-vnetdev-vnetrepo" />
+      <option name="name" value="dev-azure-com-vnetdev-vnetrepo" />
+      <option name="url" value="https://pkgs.dev.azure.com/vnetDev/_packaging/VnetRepo/maven/v1" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="VnetRepo" />
+      <option name="name" value="VnetRepo" />
+      <option name="url" value="https://pkgs.dev.azure.com/vnetDev/_packaging/VnetRepo/maven/v1" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
