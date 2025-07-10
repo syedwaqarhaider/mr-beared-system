@@ -1,5 +1,6 @@
 package com.beared.userservice.controller;
 import com.beared.userservice.model.UserAccount;
+import com.beared.userservice.response.ApiResponse;
 import com.beared.userservice.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,46 +16,34 @@ public class UserAccountController {
     private final UserAccountService service;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody UserAccount user) {
+    public ResponseEntity<ApiResponse<?>> register(@RequestBody UserAccount user) {
         UserAccount created = service.registerUser(user);
-        return ResponseEntity.ok(created);
+        return ResponseEntity.ok(new ApiResponse<>(true, "User registered successfully.", created));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password) {
-        Optional<UserAccount> userOpt = service.login(email, password);
-        if (userOpt.isPresent()) {
-            return ResponseEntity.ok(userOpt.get());
-        } else {
-            return ResponseEntity.status(401).body("Invalid credentials");
-        }
+    public ResponseEntity<ApiResponse<?>> login(@RequestParam String email, @RequestParam String password) {
+        UserAccount user = service.login(email, password);
+        return ResponseEntity.ok(new ApiResponse<>(true, "Login successful.", user));
     }
 
-
     @PostMapping("/request-auth-code")
-    public ResponseEntity<?> requestAuthCode(@RequestParam String email) {
-        return service.requestAuthCode(email)
-                .map(u -> ResponseEntity.ok("Auth code sent"))
-                .orElse(ResponseEntity.badRequest().body("User not found"));
+    public ResponseEntity<ApiResponse<?>> requestAuthCode(@RequestParam String email) {
+        UserAccount user = service.requestAuthCode(email);
+        return ResponseEntity.ok(new ApiResponse<>(true, "Auth code generated and sent.", user.getAuthCode()));
     }
 
     @PostMapping("/verify-auth-code")
-    public ResponseEntity<?> verifyAuthCode(@RequestParam String email, @RequestParam String code) {
-        if (service.verifyAuthCode(email, code)) {
-            return ResponseEntity.ok("Auth code valid");
-        } else {
-            return ResponseEntity.status(401).body("Invalid or expired auth code");
-        }
+    public ResponseEntity<ApiResponse<?>> verifyAuthCode(@RequestParam String email, @RequestParam String code) {
+        service.verifyAuthCode(email, code);
+        return ResponseEntity.ok(new ApiResponse<>(true, "Auth code verified.", null));
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<?> resetPassword(@RequestParam String email,
-                                           @RequestParam String authCode,
-                                           @RequestParam String newPassword) {
-        if (service.resetPassword(email, authCode, newPassword)) {
-            return ResponseEntity.ok("Password reset successful");
-        } else {
-            return ResponseEntity.status(401).body("Invalid or expired token");
-        }
+    public ResponseEntity<ApiResponse<?>> resetPassword(@RequestParam String email,
+                                                        @RequestParam String authCode,
+                                                        @RequestParam String newPassword) {
+        service.resetPassword(email, authCode, newPassword);
+        return ResponseEntity.ok(new ApiResponse<>(true, "Password reset successfully.", null));
     }
 }

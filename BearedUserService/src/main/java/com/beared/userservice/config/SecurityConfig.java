@@ -18,7 +18,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Disable CSRF for simplicity (API only)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/register", "/api/users/login", "/api/users/request-auth-code", "/api/users/reset-password").permitAll()
+                        .requestMatchers("/api/users/register", "/api/users/login", "/api/users/request-auth-code", "/api/users/verify-auth-code", "/api/users/reset-password").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(STATELESS))

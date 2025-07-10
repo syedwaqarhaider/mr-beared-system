@@ -30,6 +30,9 @@ public class UserAccount {
     @Column(length = 10)
     private String authCode;
 
+    @Column(nullable = false, columnDefinition = "CHAR")
+    private char isActive;
+
     private LocalDateTime resetTokenExpiry;
 
     private LocalDateTime createdAt = LocalDateTime.now();

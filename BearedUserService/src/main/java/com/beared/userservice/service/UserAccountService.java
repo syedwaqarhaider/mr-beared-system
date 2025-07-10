@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
-
 @Service
 @RequiredArgsConstructor
 public class UserAccountService {
@@ -24,55 +24,81 @@ public class UserAccountService {
         return repository.save(user);
     }
 
-    public Optional<UserAccount> login(String email, String password) {
+    public UserAccount login(String email, String password) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
-        if (userOpt.isPresent()) {
-            if (passwordEncoder.matches(password, userOpt.get().getPasswordHash())) {
-                return userOpt;
-            }
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("User with this email does not exist.");
         }
-        return Optional.empty();
+        UserAccount user = userOpt.get();
+        if(user.getIsActive()=='N')
+        {
+            throw new IllegalArgumentException("Account Not Activated");
+        }
+        else if (!passwordEncoder.matches(password, user.getPasswordHash())) {
+            throw new IllegalArgumentException("Invalid credentials.");
+        }
+        return user;
     }
 
-    public Optional<UserAccount> requestAuthCode(String email) {
+    public UserAccount requestAuthCode(String email) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
-        userOpt.ifPresent(user -> {
-            String authCode = generateAuthCode();
-            user.setAuthCode(authCode);
-            user.setResetTokenExpiry(LocalDateTime.now().plusMinutes(10));
-            user.setUpdatedAt(LocalDateTime.now());
-            repository.save(user);
-            // TODO: Send authCode by email or SMS here
-        });
-        return userOpt;
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("User with this email does not exist.");
+        }
+        UserAccount user = userOpt.get();
+        String authCode = generateAuthCode();
+        user.setAuthCode(authCode);
+        user.setResetTokenExpiry(LocalDateTime.now().plusMinutes(10));
+        user.setUpdatedAt(LocalDateTime.now());
+        repository.save(user);
+        // TODO: Send auth code via email/SMS
+        return user;
     }
 
     public boolean verifyAuthCode(String email, String code) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
-        if (userOpt.isPresent()) {
-            UserAccount user = userOpt.get();
-            return code.equals(user.getAuthCode()) && LocalDateTime.now().isBefore(user.getResetTokenExpiry());
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("User not found.");
         }
-        return false;
+        UserAccount user = userOpt.get();
+        if (!code.equals(user.getAuthCode())) {
+            throw new IllegalArgumentException("Invalid auth code.");
+        }
+        if (LocalDateTime.now().isAfter(user.getResetTokenExpiry())) {
+            throw new IllegalArgumentException("Auth code expired.");
+        }
+        user.setAuthCode(null);
+        user.setResetTokenExpiry(null);
+        user.setIsActive('A');
+        user.setUpdatedAt(LocalDateTime.now());
+        repository.save(user);
+        return true;
     }
 
     public boolean resetPassword(String email, String authCode, String newPassword) {
         Optional<UserAccount> userOpt = repository.findByEmail(email);
-        if (userOpt.isPresent()) {
-            UserAccount user = userOpt.get();
-            if (authCode.equals(user.getAuthCode()) && LocalDateTime.now().isBefore(user.getResetTokenExpiry())) {
-                user.setPasswordHash(passwordEncoder.encode(newPassword));
-                user.setAuthCode(null);
-                user.setResetTokenExpiry(null);
-                user.setUpdatedAt(LocalDateTime.now());
-                repository.save(user);
-                return true;
-            }
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("User not found.");
         }
-        return false;
+        UserAccount user = userOpt.get();
+        if (!authCode.equals(user.getAuthCode())) {
+            throw new IllegalArgumentException("Invalid auth code.");
+        }
+        if (LocalDateTime.now().isAfter(user.getResetTokenExpiry())) {
+            throw new IllegalArgumentException("Auth code expired.");
+        }
+        user.setPasswordHash(passwordEncoder.encode(newPassword));
+        user.setAuthCode(null);
+        user.setResetTokenExpiry(null);
+        user.setUpdatedAt(LocalDateTime.now());
+        repository.save(user);
+        return true;
     }
 
     private String generateAuthCode() {
-        return UUID.randomUUID().toString().substring(0, 4); // Simple 4-char code
+        Random random = new Random();
+        int code = 1000 + random.nextInt(9000);
+        return String.valueOf(code);
     }
+
 }

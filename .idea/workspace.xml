@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/exception/ServiceExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/controller/UserAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/model/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/model/UserAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/src/main/java/com/beared/userservice/service/UserAccountService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
