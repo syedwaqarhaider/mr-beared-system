@@ -1,5 +1,6 @@
 package com.beared.shopservice.controller;
 
+import com.beared.shopservice.dto.ShopDTO;
 import com.beared.shopservice.model.Shop;
 import com.beared.shopservice.response.ApiResponse;
 import com.beared.shopservice.service.ShopService;
@@ -25,7 +26,7 @@ public class ShopController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<Shop>> update(@PathVariable Long id, @RequestBody Shop shop) {
+    public ResponseEntity<ApiResponse<?>> update(@PathVariable Long id, @RequestBody Shop shop) {
         return ResponseEntity.ok(shopService.updateShop(id, shop));
     }
 

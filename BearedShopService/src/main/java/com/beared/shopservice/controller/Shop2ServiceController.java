@@ -16,7 +16,7 @@ public class Shop2ServiceController {
     private final Shop2ServiceService service;
 
     @PostMapping("/add")
-    public ResponseEntity<ApiResponse<Shop2Service>> addServiceToShop(
+    public ResponseEntity<ApiResponse<?>> addServiceToShop(
             @RequestParam Long shopId,
             @RequestParam Long serviceId,
             @RequestParam Double price,
@@ -30,7 +30,7 @@ public class Shop2ServiceController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<Shop2Service>> updateShopService(
+    public ResponseEntity<ApiResponse<?>> updateShopService(
             @PathVariable Long id,
             @RequestParam Double price,
             @RequestParam Integer durationMinutes,

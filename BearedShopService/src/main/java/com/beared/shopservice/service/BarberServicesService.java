@@ -1,5 +1,7 @@
 package com.beared.shopservice.service;
 
+import com.beared.shopservice.dto.BarberServicesDTO;
+import com.beared.shopservice.mapper.BarberServicesMapper;
 import com.beared.shopservice.model.BarberServices;
 import com.beared.shopservice.repository.BarberServicesRepository;
 import com.beared.shopservice.response.ApiResponse;
@@ -15,19 +17,22 @@ import java.util.List;
 public class BarberServicesService {
 
     private final BarberServicesRepository barberServicesRepository;
+    private final BarberServicesMapper barberServicesMapper;
 
-    public ApiResponse<BarberServices> createService(BarberServices service) {
+    public ApiResponse<BarberServicesDTO> createService(BarberServices service) {
         if (barberServicesRepository.existsByServiceName(service.getServiceName())) {
             throw new RuntimeException("Service name already exists.");
         }
-        return new ApiResponse<>(true, "Service created", barberServicesRepository.save(service));
+        BarberServices saved = barberServicesRepository.save(service);
+        return new ApiResponse<>(true, "Service created", barberServicesMapper.toDTO(saved));
     }
 
-    public ApiResponse<List<BarberServices>> getAllServices() {
-        return new ApiResponse<>(true, "All services", barberServicesRepository.findAll());
+    public ApiResponse<List<BarberServicesDTO>> getAllServices() {
+        List<BarberServices> all = barberServicesRepository.findAll();
+        return new ApiResponse<>(true, "All services", barberServicesMapper.toDTOList(all));
     }
 
-    public ApiResponse<BarberServices> updateService(Long id, BarberServices updated) {
+    public ApiResponse<BarberServicesDTO> updateService(Long id, BarberServices updated) {
         BarberServices service = barberServicesRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Service not found."));
 
@@ -39,7 +44,7 @@ public class BarberServicesService {
         service.setServiceName(updated.getServiceName());
         service.setDescription(updated.getDescription());
 
-        return new ApiResponse<>(true, "Service updated", barberServicesRepository.save(service));
+        return new ApiResponse<>(true, "Service updated", barberServicesMapper.toDTO(barberServicesRepository.save(service)));
     }
 
     public ApiResponse<String> deleteService(Long id) {

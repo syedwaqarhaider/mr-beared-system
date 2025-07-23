@@ -24,6 +24,6 @@ public class BarberServices extends Base {
     @Column(nullable = false, length = 255)
     private String description;
 
-    @OneToMany(mappedBy = "service")
+    @OneToMany(mappedBy = "services")
     private List<Shop2Service> shopServices = new ArrayList<>();
 }

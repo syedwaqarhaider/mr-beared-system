@@ -5,8 +5,10 @@ import com.beared.shopservice.repository.ShopOwnerRepository;
 import com.beared.shopservice.response.ApiResponse;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -15,6 +17,7 @@ import java.util.List;
 public class ShopOwnerService {
 
     private final ShopOwnerRepository shopOwnerRepository;
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public ApiResponse<ShopOwner> createShopOwner(ShopOwner owner) {
         if (shopOwnerRepository.existsByEmail(owner.getEmail())) {
@@ -26,6 +29,7 @@ public class ShopOwnerService {
         if (shopOwnerRepository.existsByCnic(owner.getCnic())) {
             throw new RuntimeException("CNIC already exists.");
         }
+        owner.setPasswordHash(passwordEncoder.encode(owner.getPasswordHash()));
         return new ApiResponse<>(true, "Shop owner created", shopOwnerRepository.save(owner));
     }
 
@@ -56,7 +60,8 @@ public class ShopOwnerService {
         owner.setEmail(updated.getEmail());
         owner.setPhoneNumber(updated.getPhoneNumber());
         owner.setCnic(updated.getCnic());
-        owner.setPasswordHash(updated.getPasswordHash());
+        owner.setPasswordHash(passwordEncoder.encode(owner.getPasswordHash()));
+        owner.setUpdatedAt(LocalDateTime.now());
 
         return new ApiResponse<>(true, "Owner updated", shopOwnerRepository.save(owner));
     }

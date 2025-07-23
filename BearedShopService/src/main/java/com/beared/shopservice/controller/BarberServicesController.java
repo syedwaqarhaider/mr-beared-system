@@ -15,7 +15,7 @@ public class BarberServicesController {
     private final BarberServicesService barberServicesService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse<BarberServices>> create(@RequestBody BarberServices service) {
+    public ResponseEntity<ApiResponse<?>> create(@RequestBody BarberServices service) {
         return ResponseEntity.ok(barberServicesService.createService(service));
     }
 
@@ -25,7 +25,7 @@ public class BarberServicesController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<BarberServices>> update(@PathVariable Long id, @RequestBody BarberServices service) {
+    public ResponseEntity<ApiResponse<?>> update(@PathVariable Long id, @RequestBody BarberServices service) {
         return ResponseEntity.ok(barberServicesService.updateService(id, service));
     }
 

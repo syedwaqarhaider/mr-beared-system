@@ -1,5 +1,7 @@
 package com.beared.shopservice.service;
 
+import com.beared.shopservice.dto.ShopDTO;
+import com.beared.shopservice.mapper.ShopMapper;
 import com.beared.shopservice.model.Shop;
 import com.beared.shopservice.repository.ShopOwnerRepository;
 import com.beared.shopservice.repository.ShopRepository;
@@ -8,6 +10,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -32,11 +35,16 @@ public class ShopService {
         return new ApiResponse<>(true, "Shop created", saved);
     }
 
-    public ApiResponse<List<Shop>> getAllShops() {
-        return new ApiResponse<>(true, "All shops", shopRepository.findAll());
+    public ApiResponse<List<ShopDTO>> getAllShops() {
+        List<Shop> shops = shopRepository.findAll();
+        List<ShopDTO> shopList = shops.stream()
+                .map(ShopMapper::toDTO)
+                .toList();
+
+        return new ApiResponse<>(true, "All shops", shopList);
     }
 
-    public ApiResponse<Shop> updateShop(Long id, Shop updated) {
+    public ApiResponse<ShopDTO> updateShop(Long id, Shop updated) {
         Shop shop = shopRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Shop not found."));
 
@@ -46,9 +54,9 @@ public class ShopService {
         shop.setLongitude(updated.getLongitude());
         shop.setStatus(updated.getStatus());
         shop.setPictureUrl(updated.getPictureUrl());
-
+        shop.setUpdatedAt(LocalDateTime.now());
         Shop saved = shopRepository.save(shop);
-        return new ApiResponse<>(true, "Shop updated", saved);
+        return new ApiResponse<>(true, "Shop updated", ShopMapper.toDTO(saved));
     }
 
     public ApiResponse<String> deleteShop(Long id) {
