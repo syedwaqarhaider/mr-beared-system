@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/BearedApiGateway/pom.xml" />
         <option value="$PROJECT_DIR$/EurekaServer/pom.xml" />
         <option value="$PROJECT_DIR$/BearedUserService/pom.xml" />
+        <option value="$PROJECT_DIR$/BearedShopService/pom.xml" />
       </list>
     </option>
   </component>
