@@ -66,4 +66,28 @@ public class ShopService {
         shopRepository.delete(shop);
         return new ApiResponse<>(true, "Shop deleted", null);
     }
+
+    public ApiResponse<List<ShopDTO>> searchNearbyShops(double lat, double lon, double radiusMeters) {
+        List<Shop> shops = shopRepository.findNearbyShops(lat, lon, radiusMeters);
+        List<ShopDTO> shopList = shops.stream()
+                .map(ShopMapper::toDTO)
+                .toList();
+        return new ApiResponse<>(true, "Nearby shops", shopList);
+    }
+
+    public ApiResponse<List<ShopDTO>> searchShopsByMinRating(double minRating) {
+        List<Shop> shops = shopRepository.findByMinAvgRating(minRating);
+        List<ShopDTO> shopList = shops.stream()
+                .map(ShopMapper::toDTO)
+                .toList();
+        return new ApiResponse<>(true, "Shops with rating >= " + minRating, shopList);
+    }
+
+    public ApiResponse<List<ShopDTO>> searchShopsByNameOrAddress(String query) {
+        List<Shop> shops = shopRepository.searchByNameOrAddress(query.trim());
+        List<ShopDTO> shopList = shops.stream()
+                .map(ShopMapper::toDTO)
+                .toList();
+        return new ApiResponse<>(true, "Search results for query", shopList);
+    }
 }

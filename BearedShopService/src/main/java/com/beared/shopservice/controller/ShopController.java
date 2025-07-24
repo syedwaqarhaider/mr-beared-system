@@ -34,4 +34,25 @@ public class ShopController {
     public ResponseEntity<ApiResponse<String>> delete(@PathVariable Long id) {
         return ResponseEntity.ok(shopService.deleteShop(id));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<ApiResponse<?>> searchNearbyShops(
+            @RequestParam double lat,
+            @RequestParam double lon,
+            @RequestParam double radius) {
+        return ResponseEntity.ok(shopService.searchNearbyShops(lat, lon, radius));
+    }
+
+    @GetMapping("/search-by-rating")
+    public ResponseEntity<ApiResponse<?>> searchByMinRating(
+            @RequestParam double minRating) {
+        return ResponseEntity.ok(shopService.searchShopsByMinRating(minRating));
+    }
+
+    @GetMapping("/search-by-text")
+    public ResponseEntity<ApiResponse<?>> searchByNameOrAddress(
+            @RequestParam String query) {
+        return ResponseEntity.ok(shopService.searchShopsByNameOrAddress(query));
+    }
+
 }
