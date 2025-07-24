@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="" />
+    <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/repository/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/service/ShopService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +45,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "F2__ShopService__Implementation",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/MyWorkSpace_Beared/mr-beared-system/BearedShopService/src/main/resources",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
@@ -52,6 +58,7 @@
       <recent name="C:\MyWorkSpace_Beared\mr-beared-system\BearedApiGateway\src\main\resources" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="" />
