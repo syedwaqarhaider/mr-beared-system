@@ -1,5 +1,7 @@
 package com.beared.shopservice.service;
 
+import com.beared.shopservice.clients.queue.QueueClient;
+import com.beared.shopservice.clients.queue.QueueRequest;
 import com.beared.shopservice.dto.ShopDTO;
 import com.beared.shopservice.mapper.ShopMapper;
 import com.beared.shopservice.model.Shop;
@@ -20,6 +22,7 @@ public class ShopService {
 
     private final ShopRepository shopRepository;
     private final ShopOwnerRepository shopOwnerRepository;
+    private final QueueClient queueClient;
 
     public ApiResponse<Shop> createShop(Shop shop) {
         if (shop.getOwner() == null || shop.getOwner().getId() == null) {
@@ -32,6 +35,21 @@ public class ShopService {
         }
 
         Shop saved = shopRepository.save(shop);
+        QueueRequest queueRequest = new QueueRequest(saved.getShopName() + " Queue");
+
+        try {
+            // Call Queue microservice
+            var response = queueClient.createQueue(queueRequest);
+
+            if (!response.isSuccess()) {
+                throw new RuntimeException("Queue creation failed: " + response.getMessage());
+            }
+
+        } catch (Exception e) {
+            // Rollback shop creation if queue creation fails
+            System.out.println(e.getMessage());
+            throw new RuntimeException("Failed to create queue. Rolling back shop creation.", e);
+        }
         return new ApiResponse<>(true, "Shop created", saved);
     }
 
