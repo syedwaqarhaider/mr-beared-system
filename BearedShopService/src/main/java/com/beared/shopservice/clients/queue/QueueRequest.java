@@ -8,5 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class QueueRequest {
+    private Long shopId;
     private String queueName;
 }

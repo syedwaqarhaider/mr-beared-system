@@ -20,6 +20,9 @@ public class Queue {
     @Column(name = "queue_id")
     private Long queueId;
 
+    @Column(name = "shop_id", unique = true, nullable = false, length = 255)
+    private Long shopId;
+
     @Column(name = "queue_name", nullable = false, length = 255)
     private String queueName;
 
@@ -31,19 +34,4 @@ public class Queue {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public Long getQueueId() {
-        return queueId;
-    }
-
-    public String getQueueName() {
-        return queueName;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
 }

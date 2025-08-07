@@ -34,8 +34,14 @@ public class ShopService {
             throw new IllegalArgumentException("Shop owner not found.");
         }
 
+        List<Shop> shopList=shopRepository.searchByNameOrAddress(shop.getShopName());
+        if(!shopList.isEmpty())
+        {
+            throw new IllegalArgumentException("Shop with this name already exist");
+        }
+
         Shop saved = shopRepository.save(shop);
-        QueueRequest queueRequest = new QueueRequest(saved.getShopName() + " Queue");
+        QueueRequest queueRequest = new QueueRequest(saved.getShopId(), saved.getShopName() + " Queue");
 
         try {
             // Call Queue microservice
