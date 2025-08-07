@@ -1,9 +1,12 @@
 package com.beared.queueservice.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 public class ApiResponse<T> {
     private boolean success;
     private String message;

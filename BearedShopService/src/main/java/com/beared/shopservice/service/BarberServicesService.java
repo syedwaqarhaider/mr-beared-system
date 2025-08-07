@@ -54,4 +54,11 @@ public class BarberServicesService {
         barberServicesRepository.delete(service);
         return new ApiResponse<>(true, "Service deleted", null);
     }
+
+    public List<BarberServicesDTO> findBulkServices(List<Long> serviceIds)
+    {
+        List<BarberServices> servicesList= barberServicesRepository.findByIdIn(serviceIds);
+        return barberServicesMapper.toDTOList(servicesList);
+
+    }
 }
