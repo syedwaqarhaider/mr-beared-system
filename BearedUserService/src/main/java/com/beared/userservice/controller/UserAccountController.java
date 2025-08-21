@@ -1,4 +1,5 @@
 package com.beared.userservice.controller;
+import com.beared.userservice.dto.UserDTO;
 import com.beared.userservice.model.UserAccount;
 import com.beared.userservice.response.ApiResponse;
 import com.beared.userservice.service.UserAccountService;
@@ -52,5 +53,11 @@ public class UserAccountController {
     public ResponseEntity<ApiResponse<?>> deleteAccount(@RequestParam String email, @RequestParam String password) {
         service.deleteAccount(email, password);
         return ResponseEntity.ok(new ApiResponse<>(true, StringUtil.ACCOUNT_DELETE_SUCCESS, null));
+    }
+
+    @GetMapping("/{userId}")
+    public UserDTO getSingleUserById(@PathVariable Long userId)
+    {
+        return service.getUserById(userId);
     }
 }

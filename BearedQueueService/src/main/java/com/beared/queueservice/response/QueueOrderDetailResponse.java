@@ -4,6 +4,7 @@ import com.beared.queueservice.dto.ServiceDTO;
 import com.beared.queueservice.enums.QueueOrderStatus;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class QueueOrderDetailResponse {
     private Long userId;
     private String userName; // From User Microservice
     private Integer estimatedTimeToComplete;
+    private BigDecimal totalPrice;
     private QueueOrderStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

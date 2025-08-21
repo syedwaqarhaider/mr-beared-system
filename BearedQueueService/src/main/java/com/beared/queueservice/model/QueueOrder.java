@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -27,6 +28,9 @@ public class QueueOrder {
     private Long userId;
 
     private Integer estimatedTimeToComplete;
+
+    @Column(name = "total_price", nullable = false)
+    private BigDecimal totalPrice;
 
     @Enumerated(EnumType.STRING)
     private QueueOrderStatus status;

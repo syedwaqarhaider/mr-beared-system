@@ -37,7 +37,7 @@ public class BarberServicesController {
         return ResponseEntity.ok(barberServicesService.deleteService(id));
     }
 
-    @GetMapping("/bulk")
+    @PostMapping("/bulk")
     public ResponseEntity<List<BarberServicesDTO>> getBulkServices(@RequestBody List<Long> serviceIds)
     {
         return ResponseEntity.ok(barberServicesService.findBulkServices(serviceIds));

@@ -1,16 +1,21 @@
 package com.beared.queueservice.controller;
 
 import com.beared.queueservice.dto.QueueOrderRequest;
+import com.beared.queueservice.dto.SalesResponseDto;
 import com.beared.queueservice.enums.QueueOrderStatus;
 import com.beared.queueservice.response.QueueOrderDetailResponse;
 import com.beared.queueservice.response.QueueOrderResponse;
 import com.beared.queueservice.response.ApiResponse;
 import com.beared.queueservice.service.QueueOrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/queue-orders")
@@ -52,5 +57,29 @@ public class QueueOrderController {
     public ResponseEntity<ApiResponse<QueueOrderDetailResponse>> getOrderDetail(@PathVariable Long id) {
         QueueOrderDetailResponse detail = queueOrderService.getOrderDetail(id);
         return ResponseEntity.ok(new ApiResponse<>(true, "Order detail fetched", detail));
+    }
+
+    @GetMapping("/{shopId}/today")
+    public ResponseEntity<ApiResponse<Map<String, BigDecimal>>> getTodaySales(@PathVariable Long shopId) {
+        Map<String, BigDecimal> sales = queueOrderService.getTodaySales(shopId);
+        return ResponseEntity.ok(ApiResponse.<Map<String, BigDecimal>>builder()
+                .success(true)
+                .message("Today's sales calculated successfully")
+                .data(sales)
+                .build());
+    }
+
+    @GetMapping("/sales/{shopId}")
+    public ResponseEntity<ApiResponse<SalesResponseDto>> getSalesReport(
+            @PathVariable Long shopId,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+
+        SalesResponseDto result = queueOrderService.getCompletedOrdersWithSales(shopId, startDate, endDate);
+        return ResponseEntity.ok(ApiResponse.<SalesResponseDto>builder()
+                        .success(true)
+                        .message("Sale History Fetched")
+                        .data(result)
+                        .build());
     }
 }

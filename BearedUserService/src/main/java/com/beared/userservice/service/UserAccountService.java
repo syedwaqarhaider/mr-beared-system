@@ -1,5 +1,6 @@
 package com.beared.userservice.service;
 
+import com.beared.userservice.dto.UserDTO;
 import com.beared.userservice.model.UserAccount;
 import com.beared.userservice.repository.UserAccountRepository;
 import com.beared.userservice.util.StringUtil;
@@ -107,6 +108,19 @@ public class UserAccountService {
         }
         repository.delete(user);
         return true;
+    }
+
+    public UserDTO getUserById(Long userId)
+    {
+        Optional<UserAccount> userOpt = repository.findById(userId);
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("User Not Found");
+        }
+        UserDTO currentUser= new UserDTO();
+        currentUser.setUserId(userOpt.get().getUserId());
+        currentUser.setFullName(userOpt.get().getFullName());
+        currentUser.setEmail(userOpt.get().getEmail());
+        return currentUser;
     }
 
     private String generateAuthCode() {

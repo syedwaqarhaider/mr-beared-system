@@ -4,6 +4,7 @@ import com.beared.queueservice.enums.QueueOrderStatus;
 import lombok.Builder;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class QueueOrderResponse {
     private Long shopId;
     private Long userId;
     private Integer estimatedTimeToComplete;
+    private BigDecimal totalPrice;
     private QueueOrderStatus status;
     private List<Long> serviceIds;
     private LocalDateTime createdAt;

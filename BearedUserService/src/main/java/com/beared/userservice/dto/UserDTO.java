@@ -1,6 +1,5 @@
-package com.beared.queueservice.dto;
+package com.beared.userservice.dto;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data

@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ServiceDTO {
-    private Long id;
-    private String name;
+    private Long serviceId;
+    private String serviceName;
     private String description;
 }

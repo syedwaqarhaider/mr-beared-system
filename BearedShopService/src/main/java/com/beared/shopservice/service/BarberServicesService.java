@@ -57,7 +57,7 @@ public class BarberServicesService {
 
     public List<BarberServicesDTO> findBulkServices(List<Long> serviceIds)
     {
-        List<BarberServices> servicesList= barberServicesRepository.findByIdIn(serviceIds);
+        List<BarberServices> servicesList= barberServicesRepository.findByServiceIdIn(serviceIds);
         return barberServicesMapper.toDTOList(servicesList);
 
     }
