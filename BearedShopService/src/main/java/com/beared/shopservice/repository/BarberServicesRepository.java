@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface BarberServicesRepository extends JpaRepository<BarberServices, Long> {
     boolean existsByServiceName(String serviceName);
-    List<BarberServices> findByIdIn(List<Long> ids);
+    List<BarberServices> findByServiceIdIn(List<Long> ids);
 
 }

@@ -21,6 +21,7 @@ public class QueueOrderMapper {
                 .shopId(order.getShopId())
                 .userId(order.getUserId())
                 .estimatedTimeToComplete(order.getEstimatedTimeToComplete())
+                .totalPrice(order.getTotalPrice())
                 .status(order.getStatus())
                 .serviceIds(serviceIds)
                 .createdAt(order.getCreatedAt())
