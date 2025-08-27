@@ -4,74 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedApiGateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedApiGateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BearedApiGateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedApiGateway/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedApiGateway/target/classes/com/beared/gateway/BearedApiGatewayApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/BearedShopServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/BearedShopServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/src/main/java/com/beared/shopservice/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BearedShopService/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/BearedShopServiceApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/controller/BarberServicesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/controller/Shop2ServiceController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/controller/ShopController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/controller/ShopOwnerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/dto/BarberServicesDTO$BarberServicesDTOBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/dto/BarberServicesDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/dto/Shop2ServiceDTO$Shop2ServiceDTOBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/dto/Shop2ServiceDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/dto/ShopDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/exception/ServiceExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/mapper/BarberServicesMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/mapper/Shop2ServiceMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/mapper/ShopMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/BarberServices$BarberServicesBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/BarberServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/Base.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/Shop$ShopBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/Shop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/Shop2Service$Shop2ServiceBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/Shop2Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/ShopOwner$ShopOwnerBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/model/ShopOwner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/queries/Queries.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/repository/BarberServicesRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/repository/Shop2ServiceRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/repository/ShopOwnerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/repository/ShopRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/response/ApiResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/service/BarberServicesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/service/Shop2ServiceService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/service/ShopOwnerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedShopService/target/classes/com/beared/shopservice/service/ShopService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BearedUserService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/BearedUserServiceApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/controller/UserAccountController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/exception/ServiceExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/model/UserAccount$UserAccountBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/model/UserAccount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/repository/UserAccountRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/response/ApiResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/service/UserAccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BearedUserService/target/classes/com/beared/userservice/util/StringUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EurekaServer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EurekaServer/target/classes/com/beared/eurekaserver/EurekaServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/target/classes/com/beared/eurekaserver/EurekaServerApplication.class" afterDir="false" />
-    </list>
+    <list default="true" id="854e0fcd-823e-4d56-965d-f0ed7c5f7e76" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,27 +36,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BearedApiGatewayApplication.executor": "Run",
-    "Application.BearedQueueServiceApplication.executor": "Run",
-    "Application.BearedShopServiceApplication.executor": "Run",
-    "Application.BearedUserServiceApplication.executor": "Run",
-    "Application.EurekaServerApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "F3__Queue__Implementation",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/MyWorkSpace_Beared/mr-beared-system/BearedQueueService",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BearedApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BearedQueueServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BearedShopServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BearedUserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;F3__Queue__Implementation&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/MyWorkSpace_Beared/mr-beared-system/BearedQueueService&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\MyWorkSpace_Beared\mr-beared-system\BearedShopService\src\main\resources" />

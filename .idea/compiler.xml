@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
       </profile>
-      <profile name="Annotation profile for BearedApiGateway" enabled="true">
+      <profile name="Annotation profile for BearedUserService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
