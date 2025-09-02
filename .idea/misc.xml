@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/BearedUserService/pom.xml" />
         <option value="$PROJECT_DIR$/BearedShopService/pom.xml" />
         <option value="$PROJECT_DIR$/BearedQueueService/pom.xml" />
+        <option value="$PROJECT_DIR$/WalletService/pom.xml" />
       </list>
     </option>
   </component>
